@@ -1,5 +1,8 @@
-<% @students.each do |student| %> 
+<% form_tag students_path, method: :get do %> 
+
+  <%= text_field_tag :query, params[:query] %> 
+  <%= submit_tag "Search", name: nil %> 
+
+
+<% @students.each do |student| %>
 <%= render 'student', locals: {student: student}
-
-
-
